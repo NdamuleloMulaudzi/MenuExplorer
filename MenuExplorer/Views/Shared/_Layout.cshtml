@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Kings</title>
     <script type="importmap"></script>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MenuExplorer.styles.css" asp-append-version="true" />
 </head>
@@ -17,7 +16,7 @@
             <a asp-controller="Menu"
                asp-action="Index"
                class="brand">
-                <span class="brand__crown">♛</span>
+                <span class="brand-crown">♛</span>
                 <span>Menu Explorer</span>
             </a>
 
@@ -47,7 +46,7 @@
 
 
     <footer class="footer">
-       @*  <p>KingS Good food fit for Royalty</p> *@
+        @* <p>KingS Good food fit for Royalty</p> *@
     </footer>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

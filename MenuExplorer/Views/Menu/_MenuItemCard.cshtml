@@ -3,22 +3,57 @@
 
 }
 <div class="menu-card">
-    <h2>@Model.Name</h2>
+    <div class="menu-card-top">
+        <span class="category-badge">
+            @Model.Category
+        </span>
 
-    <p>@Model.Description</p>
-
-    <p><strong>R @Model.Price</strong></p>
-
-    <p>@Model.Category</p>
-
-    <p>@Model.Rating / 5</p>
-
-    @if (Model.IsVegetarian)
-    {
-        <span>Vegetarian</span>
-    }
-
-    <div>
-        <a asp-controller="Menu" asp-action="itemdetails" asp-route-id="@Model.Id">View Details</a>
+        @if (Model.IsVegetarian)
+        {
+            <span class="vegetarian-badge">
+                Vegetarian
+            </span>
+        }
     </div>
+
+    <div class="menu-card-body">
+
+        <h2>@Model.Name</h2>
+
+        <p class="menu-card-description">
+            @Model.Description
+        </p>
+
+        <div class="menu-card-rating">
+            @for (var i = 1; i <= 5; i++)
+            {
+                if (i <= Model.Rating)
+                {
+                    <span>★</span>
+                }
+                else
+                {
+                    <span class="empty-star">★</span>
+                }
+            }
+        </div>
+
+    </div>
+
+    <div class="menu-card-footer">
+
+        <span class="price">
+            R @Model.Price.ToString("0.00")
+        </span>
+
+        <a asp-controller="Menu"
+           asp-action="itemdetails"
+           asp-route-id="@Model.Id"
+           class="details-link">
+            View details
+        </a>
+
+    </div>
+
+    
 </div>
