@@ -7,8 +7,6 @@
 <section class="page-header">
 
     <div>
-        <span class="eyebrow">THE KINGDOM'S KITCHEN</span>
-
         <h1>Our Menu</h1>
 
         <p>
@@ -18,11 +16,23 @@
 </section>
 
 
-<div class="menu-grid">
-    @foreach(var menuItem in Model)
+
+<div class="menu-container">
+
+    @if (!Model.Any())
     {
-        <div class="menu">
-            <partial name="_MenuItemCard" model="menuItem" />
+        <div class="empty-state">
+            <h2>No menu items found</h2>
+            <p>There are no menu items available for this selection.</p>
+        </div>
+    }
+    else
+    {
+        <div class="menu-grid">
+            @foreach (var item in Model)
+            {
+                <partial name="_MenuItemCard" model="item" />
+            }
         </div>
     }
 </div>

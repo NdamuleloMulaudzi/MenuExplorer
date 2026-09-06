@@ -1,9 +1,12 @@
+using MenuExplorer.Services;
 using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<MenuService>();
 
 builder.Services.AddSingleton(new JsonSerializerOptions
 {

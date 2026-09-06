@@ -26,15 +26,7 @@
     "isVegetarian": true,
     "rating": 4
   },
-  {
-    "id": 4,
-    "name": "Fresh Lemonade",
-    "description": "Freshly squeezed lemon juice with mint.",
-    "price": 45.00,
-    "category": "Beverage",
-    "isVegetarian": true,
-    "rating": 4
-  },
+
   {
     "id": 5,
     "name": "Creamy Chicken Pasta",

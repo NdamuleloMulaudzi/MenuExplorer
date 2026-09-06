@@ -1,4 +1,5 @@
 ﻿using MenuExplorer.Models;
+using MenuExplorer.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.Json;
@@ -9,41 +10,28 @@ namespace MenuExplorer.Controllers
 {
     public class MenuController : Controller
     {
-        private readonly JsonSerializerOptions _jsonSerializerOptions;
+        private readonly MenuService _menuService;
 
-        public MenuController(JsonSerializerOptions jsonSerializerOptions)
+        public MenuController(MenuService menuService)
         {
-            _jsonSerializerOptions = jsonSerializerOptions;
+            _menuService = menuService;
         }
 
         public IActionResult Index(string category)
         {
-            var menuItemsJson = System.IO.File.ReadAllText("Data/menuItems.json");
-
-            List<MenuItem> menuItems = JsonSerializer.Deserialize<List<MenuItem>>(menuItemsJson, _jsonSerializerOptions);
-
+            var menuItems = _menuService.GetAll();
             if (!string.IsNullOrEmpty(category))
             {
                 var menuCategory = Enum.Parse<MenuCategory>(category, true);
                 menuItems = menuItems.Where(items => items.Category == menuCategory).ToList();
             }
-
             return View(menuItems);
         }
 
         public IActionResult ItemDetails(int Id)
         {
-            var menuItemsJson = System.IO.File.ReadAllText("Data/menuItems.json");
-
-            List<MenuItem> menuItems = JsonSerializer.Deserialize<List<MenuItem>>(menuItemsJson, _jsonSerializerOptions);
-
-            var menuItem = menuItems.FirstOrDefault(x => x.Id == Id);
-
+            var menuItem = _menuService.GetById(Id);
             return View(menuItem);
         }
-
-
-
-      
     }
 }
