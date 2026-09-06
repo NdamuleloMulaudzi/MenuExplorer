@@ -26,7 +26,15 @@
     "isVegetarian": true,
     "rating": 4
   },
-
+  {
+    "id": 4,
+    "name": "Grilled Chicken Salad",
+    "description": "Mixed greens, grilled chicken, avocado, cucumber and cherry tomatoes.",
+    "price": 135.00,
+    "category": "MainCourse",
+    "isVegetarian": false,
+    "rating": 4
+  },
   {
     "id": 5,
     "name": "Creamy Chicken Pasta",
@@ -44,5 +52,23 @@
     "category": "MainCourse",
     "isVegetarian": true,
     "rating": 4
+  },
+  {
+    "id": 7,
+    "name": "Fresh Lemonade",
+    "description": "Freshly squeezed lemonade with mint and sparkling water.",
+    "price": 45.00,
+    "category": "Beverage",
+    "isVegetarian": true,
+    "rating": 4
+  },
+  {
+    "id": 8,
+    "name": "Iced Coffee",
+    "description": "Cold brewed coffee served over ice with your choice of milk.",
+    "price": 55.00,
+    "category": "Beverage",
+    "isVegetarian": true,
+    "rating": 5
   }
 ]

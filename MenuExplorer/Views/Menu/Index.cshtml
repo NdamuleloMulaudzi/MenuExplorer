@@ -13,8 +13,13 @@
             Good food. Good prices. No royal nonsense.
         </p>
     </div>
+    <div class="menu-search">
+        <input type="text"
+               id="menuSearch"
+               placeholder="Search menu..."
+               autocomplete="off" />
+    </div>
 </section>
-
 
 
 <div class="menu-container">
@@ -36,3 +41,24 @@
         </div>
     }
 </div>
+
+@section Scripts {
+    <script>
+        const searchInput = document.getElementById("menuSearch");
+        const menuCards = document.querySelectorAll(".menu-card");
+
+        searchInput.addEventListener("input",  () => {
+            const searchTerm = searchInput.value.toLowerCase();
+
+            menuCards.forEach( (card) => {
+                const searchableText = card.dataset.menuSearch.toLowerCase();
+
+                if (searchableText.includes(searchTerm)) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    </script>
+}

@@ -22,8 +22,7 @@ namespace MenuExplorer.Controllers
             var menuItems = _menuService.GetAll();
             if (!string.IsNullOrEmpty(category))
             {
-                var menuCategory = Enum.Parse<MenuCategory>(category, true);
-                menuItems = menuItems.Where(items => items.Category == menuCategory).ToList();
+                menuItems = menuItems.Where(item => item.Category.ToString().Equals(category)).ToList();
             }
             return View(menuItems);
         }

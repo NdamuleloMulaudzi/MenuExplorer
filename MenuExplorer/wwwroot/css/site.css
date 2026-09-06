@@ -108,8 +108,27 @@ header .container {
 
 .page-header {
     padding: 60px 0 35px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center
 }
 
+#menuSearch {
+    width: 280px;
+    padding: 13px 18px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    background: var(--white);
+    color: var(--king-black);
+    font-size: 1rem;
+    outline: none;
+    box-shadow: var(--shadow);
+}
+
+#menuSearch:focus {
+    border-color: var(--king-red);
+    box-shadow: 0 0 0 3px rgba(227, 6, 19, 0.12);
+}
 
 
 .page-header h1 {
@@ -324,6 +343,16 @@ footer p {
     }
 
     .page-header {
-        padding-top: 40px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .menu-search {
+        width: 100%;
+    }
+
+    #menuSearch {
+        width: 100%;
     }
 }
