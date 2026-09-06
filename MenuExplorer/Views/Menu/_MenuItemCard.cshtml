@@ -1,0 +1,24 @@
+﻿@model MenuExplorer.Models.MenuItem
+@{
+
+}
+<div class="menu-card">
+    <h2>@Model.Name</h2>
+
+    <p>@Model.Description</p>
+
+    <p><strong>R @Model.Price</strong></p>
+
+    <p>@Model.Category</p>
+
+    <p>@Model.Rating / 5</p>
+
+    @if (Model.IsVegetarian)
+    {
+        <span>Vegetarian</span>
+    }
+
+    <div>
+        <a asp-controller="Menu" asp-action="itemdetails" asp-route-id="@Model.Id">View Details</a>
+    </div>
+</div>

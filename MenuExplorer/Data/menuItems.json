@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Garlic Bread",
+    "description": "Toasted ciabatta with garlic butter and fresh herbs.",
+    "price": 65.00,
+    "category": "Appetizer",
+    "isVegetarian": true,
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "name": "Classic Beef Burger",
+    "description": "Grilled beef patty with cheddar cheese, lettuce and tomato.",
+    "price": 145.00,
+    "category": "MainCourse",
+    "isVegetarian": false,
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "name": "Chocolate Brownie",
+    "description": "Warm chocolate brownie served with vanilla ice cream.",
+    "price": 75.00,
+    "category": "Dessert",
+    "isVegetarian": true,
+    "rating": 4
+  },
+  {
+    "id": 4,
+    "name": "Fresh Lemonade",
+    "description": "Freshly squeezed lemon juice with mint.",
+    "price": 45.00,
+    "category": "Beverage",
+    "isVegetarian": true,
+    "rating": 4
+  },
+  {
+    "id": 5,
+    "name": "Creamy Chicken Pasta",
+    "description": "Grilled chicken breast served with penne pasta in a creamy mushroom sauce.",
+    "price": 155.00,
+    "category": "MainCourse",
+    "isVegetarian": false,
+    "rating": 4
+  },
+  {
+    "id": 6,
+    "name": "Vegetable Pasta",
+    "description": "Penne pasta with roasted vegetables, tomato sauce and parmesan.",
+    "price": 125.00,
+    "category": "MainCourse",
+    "isVegetarian": true,
+    "rating": 4
+  }
+]

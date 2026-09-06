@@ -1,7 +1,18 @@
+using System.Text.Json;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddSingleton(new JsonSerializerOptions
+{
+    PropertyNameCaseInsensitive = true,
+    Converters =
+    {
+        new System.Text.Json.Serialization.JsonStringEnumConverter()
+    }
+});
 
 var app = builder.Build();
 

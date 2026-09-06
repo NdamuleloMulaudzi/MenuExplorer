@@ -1,0 +1,54 @@
+﻿@model MenuExplorer.Models.MenuItem
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<div class="menu-item-details">
+
+    <div class="details-card">
+
+        <div class="details-card__content">
+
+            <span class="category-badge">
+                @Model.Category
+            </span>
+
+            <h1>@Model.Name</h1>
+
+            <p class="details-description">
+                @Model.Description
+            </p>
+
+            <div class="details-rating">
+                <strong>Rating</strong>
+
+                <span>
+                    @for (var i = 1; i <= 5; i++)
+                    {
+                        if (i <= Model.Rating)
+                        {
+                            <span>★</span>
+                        }
+                        else
+                        {
+                            <span class="empty-star">★</span>
+                        }
+                    }
+                </span>
+            </div>
+
+            @if (Model.IsVegetarian)
+            {
+                <p class="vegetarian-message">
+                    This dish is vegetarian
+                </p>
+            }
+
+            <div class="details-price">
+                R @Model.Price.ToString("0.00")
+            </div>
+
+        </div>
+
+    </div>
+</div>

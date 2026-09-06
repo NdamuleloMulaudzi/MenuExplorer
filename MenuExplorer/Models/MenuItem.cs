@@ -1,6 +1,6 @@
 ﻿namespace MenuExplorer.Models
 {
-    public class Menu
+    public class MenuItem
     {
         public int Id { get; set; }
 
@@ -20,7 +20,7 @@
 
         public MenuCategory Category { get; set; }
 
-        public bool isVegiterian { get; set; }
+        public bool IsVegetarian { get; set; } = true;
 
         public int Rating { get; set; }
 
