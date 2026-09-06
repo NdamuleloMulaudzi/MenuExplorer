@@ -22,6 +22,11 @@ namespace MenuExplorer.Controllers
 
             List<MenuItem> menuItems = JsonSerializer.Deserialize<List<MenuItem>>(menuItemsJson, _jsonSerializerOptions);
 
+            if (!string.IsNullOrEmpty(category) && Enum.TryParse<MenuCategory>(category, true, out var menuCategory))
+            {
+                menuItems = menuItems.Where(x => x.Category == menuCategory).ToList();
+            }
+
             return View(menuItems);
         }
 
