@@ -21,20 +21,7 @@
 
             <div class="details-rating">
                 <strong>Rating</strong>
-
-                <span>
-                    @for (var i = 1; i <= 5; i++)
-                    {
-                        if (i <= Model.Rating)
-                        {
-                            <span>★</span>
-                        }
-                        else
-                        {
-                            <span class="empty-star">★</span>
-                        }
-                    }
-                </span>
+                <star-rating value="@Model.Rating"></star-rating>
             </div>
 
             @if (Model.IsVegetarian)
