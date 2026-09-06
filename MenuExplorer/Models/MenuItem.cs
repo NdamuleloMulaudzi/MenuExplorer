@@ -20,7 +20,7 @@
 
         public MenuCategory Category { get; set; }
 
-        public bool IsVegetarian { get; set; } = true;
+        public bool IsVegetarian { get; set; }
 
         public int Rating { get; set; }
 

@@ -9,15 +9,23 @@
         <h1>Featured Items</h1>
 
         <p>
-            Some of our highest rated menu items.</p>
+            Some of our highest rated menu items.
         </p>
     </div>
 </section>
 <div class="menu-container">
-    <div class="menu-grid">
-        @foreach (var item in Model)
-        {
-            <partial name="_MenuItemCard" model="item" />
-        }
-    </div>
-</div?
+    @if (!Model.Any())
+    {
+        <div class="empty-state">
+            <h2>No featured items found</h2>
+            <p>There are currently no highly rated items to display.</p>
+        </div>
+    }else{
+        <div class="menu-grid">
+            @foreach (var item in Model)
+            {
+                <partial name="_MenuItemCard" model="item" />
+            }
+        </div>
+    }
+</div>

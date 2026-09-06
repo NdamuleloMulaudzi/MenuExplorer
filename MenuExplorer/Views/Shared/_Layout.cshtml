@@ -4,9 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - KingDOM</title>
-    <script type="importmap"></script>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/MenuExplorer.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header class="header">
@@ -46,7 +44,9 @@
 
 
     <footer class="footer">
-        @* <p>KingS Good food fit for Royalty</p> *@
+     @*    <div class="container">
+            <p>Good food. Fit for royalty.</p>
+        </div> *@
     </footer>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

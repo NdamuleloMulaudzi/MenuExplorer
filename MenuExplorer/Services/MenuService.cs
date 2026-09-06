@@ -33,7 +33,7 @@ namespace MenuExplorer.Services
             return menuItems.FirstOrDefault(menuItem => menuItem.Id == id);
         }
 
-        public List<MenuItem> GeByRating()
+        public List<MenuItem> GetByRating()
         {
             var menuItems = GetAll();
 

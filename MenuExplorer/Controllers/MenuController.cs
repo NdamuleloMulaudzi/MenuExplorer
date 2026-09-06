@@ -35,7 +35,7 @@ namespace MenuExplorer.Controllers
 
         public IActionResult FeaturedItems(string category)
         {
-            var featuredItems = _menuService.GeByRating();
+            var featuredItems = _menuService.GetByRating();
             if (!string.IsNullOrEmpty(category))
             {
                 featuredItems = featuredItems.Where(item => item.Category.ToString().Equals(category)).ToList();

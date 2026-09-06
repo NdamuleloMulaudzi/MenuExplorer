@@ -1,13 +1,14 @@
 :root {
     --king-red: #e30613;
     --king-red-dark: #b80510;
-    --king-yellow: #ffd500;
+    --king-green: #00c853;
+    --king-green-dark: #00a844;
     --king-black: #1d1d1b;
-    --cream: #fffaf0;
-    --white: #ffffff;
     --grey: #6b6b6b;
-    --light-grey: #eeeeee;
+    --white: #ffffff;
+    --light-grey: #f5f5f5;
     --border: #e3e3e3;
+    --vegetarian-bg: #e9f7eb;
     --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
@@ -18,7 +19,7 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: var(--cream);
+    background: var(--light-grey);
     color: var(--king-black);
 }
 
@@ -34,8 +35,9 @@ a {
 
 
 .header {
-    background: var(--king-red);
-    color: var(--white);
+    background: var(--white);
+    color: var(--king-black);
+    border-bottom: 1px solid var(--border);
 }
 
 header .container {
@@ -52,6 +54,12 @@ header .container {
     gap: 10px;
     font-size: 1.3rem;
     font-weight: 600;
+    color: var(--king-red);
+}
+
+.brand-crown {
+    color: var(--king-red);
+    font-size: 1.8rem;
 }
 
 .brand-crown {
@@ -69,7 +77,7 @@ header .container {
 }
 
 .main-nav a:hover {
-    color: var(--king-yellow);
+    color: var(--king-red);
 }
 
 /* Category Navigation */
@@ -102,9 +110,20 @@ header .container {
 }
 
 .category-item:hover {
-    background: var(--king-yellow);
+    background: #fce8ea;
+    color: var(--king-red);
 }
 
+.category-badge {
+    display: inline-block;
+    width: fit-content;
+    background: #fce8ea;
+    color: var(--king-red);
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 800;
+}
 
 .page-header {
     padding: 60px 0 35px;
@@ -176,19 +195,9 @@ header .container {
     flex-wrap: wrap;
 }
 
-.category-badge {
-    display: inline-block;
-    width: fit-content;
-    background: var(--king-yellow);
-    color: var(--king-black);
-    padding: 6px 10px;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 800;
-}
 
 .vegetarian-badge {
-    color: #287a35;
+    color: var(--king-green-dark);
     font-size: 0.8rem;
     font-weight: 700;
 }
@@ -233,12 +242,12 @@ header .container {
 }
 
 .details-link {
-    color: var(--king-red);
+    color: var(--king-green-dark);
     font-weight: 800;
 }
 
 .details-link:hover {
-    color: var(--king-red-dark);
+        color: var(--king-green);
 }
 
 .details-page {
@@ -284,8 +293,8 @@ header .container {
 .vegetarian-message {
     display: inline-block;
     padding: 10px 14px;
-    background: #e9f7eb;
-    color: #287a35;
+    background: var(--vegetarian-bg);
+    color: var(--king-green-dark);
     border-radius: 8px;
     font-weight: 700;
 }
@@ -297,15 +306,6 @@ header .container {
 }
 
 
-footer {
-    background: var(--king-black);
-    color: var(--white);
-    
-}
-
-footer p {
-    margin: 0;
-}
 
 
 

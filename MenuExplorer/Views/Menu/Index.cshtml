@@ -26,7 +26,7 @@
 
     @if (!Model.Any())
     {
-        <div class="empty-state">
+        <div id="noSearchResults" class="empty-state">
             <h2>No menu items found</h2>
             <p>There are no menu items available for this selection.</p>
         </div>
@@ -39,6 +39,10 @@
                 <partial name="_MenuItemCard" model="item" />
             }
         </div>
+        <div id="noSearchResults" class="empty-state" style="display: none;">
+            <h2>No menu items found</h2>
+            <p>There are no menu items matching your search.</p>
+        </div>
     }
 </div>
 
@@ -46,19 +50,27 @@
     <script>
         const searchInput = document.getElementById("menuSearch");
         const menuCards = document.querySelectorAll(".menu-card");
+        const noSearchResults = document.getElementById("noSearchResults");
 
         searchInput.addEventListener("input",  () => {
             const searchTerm = searchInput.value.toLowerCase();
-
+            let foundItems = 0;
             menuCards.forEach( (card) => {
                 const searchableText = card.dataset.menuSearch.toLowerCase();
 
                 if (searchableText.includes(searchTerm)) {
                     card.style.display = "";
+                    foundItems++;
                 } else {
                     card.style.display = "none";
                 }
             });
+
+            if(foundItems ==0){
+                noSearchResults.style.display = "";
+            } else {
+                noSearchResults.style.display = "none";
+            }
         });
     </script>
 }
