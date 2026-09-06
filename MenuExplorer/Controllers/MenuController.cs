@@ -32,5 +32,16 @@ namespace MenuExplorer.Controllers
             var menuItem = _menuService.GetById(Id);
             return View(menuItem);
         }
+
+        public IActionResult FeaturedItems(string category)
+        {
+            var featuredItems = _menuService.GeByRating();
+            if (!string.IsNullOrEmpty(category))
+            {
+                featuredItems = featuredItems.Where(item => item.Category.ToString().Equals(category)).ToList();
+            }
+
+            return View(featuredItems);
+        }
     }
 }

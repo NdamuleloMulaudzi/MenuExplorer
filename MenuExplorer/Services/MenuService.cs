@@ -32,5 +32,12 @@ namespace MenuExplorer.Services
             
             return menuItems.FirstOrDefault(menuItem => menuItem.Id == id);
         }
+
+        public List<MenuItem> GeByRating()
+        {
+            var menuItems = GetAll();
+
+            return menuItems.Where(item => item.Rating>4).ToList();
+        }
     }
 }

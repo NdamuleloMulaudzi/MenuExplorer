@@ -1,0 +1,23 @@
+﻿@model List<MenuExplorer.Models.MenuItem>
+@{
+    ViewData["Title"] = "Featured Items";
+}
+
+<section class="page-header">
+
+    <div>
+        <h1>Featured Items</h1>
+
+        <p>
+            Some of our highest rated menu items.</p>
+        </p>
+    </div>
+</section>
+<div class="menu-container">
+    <div class="menu-grid">
+        @foreach (var item in Model)
+        {
+            <partial name="_MenuItemCard" model="item" />
+        }
+    </div>
+</div?
