@@ -17,7 +17,7 @@ A simple restaurant menu application built with ASP.NET Core MVC.
 
 - C#
 - ASP.NET Core MVC
-- .NET 8
+- .NET 10
 - Razor
 - HTML/CSS
 - JavaScript
@@ -26,7 +26,7 @@ A simple restaurant menu application built with ASP.NET Core MVC.
 
 ### Requirements
 
-- .NET 8 SDK
+- .NET 10 SDK
 
 ### Run
 
@@ -34,3 +34,7 @@ A simple restaurant menu application built with ASP.NET Core MVC.
 dotnet restore
 dotnet build
 dotnet run
+```
+## Run on your browser
+
+- http://localhost:5214.
