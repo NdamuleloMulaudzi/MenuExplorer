@@ -1,4 +1,24 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿const searchInput = document.getElementById("menuSearch");
+const menuCards = document.querySelectorAll(".menu-card");
+const noSearchResults = document.getElementById("noSearchResults");
 
-// Write your JavaScript code.
+searchInput.addEventListener("input", () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    let foundItems = 0;
+    menuCards.forEach((card) => {
+        const searchableText = card.dataset.menuSearch.toLowerCase();
+
+        if (searchableText.includes(searchTerm)) {
+            card.style.display = "";
+            foundItems++;
+        } else {
+            card.style.display = "none";
+        }
+    })
+
+    if (foundItems == 0) {
+        noSearchResults.style.display = "";
+    } else {
+        noSearchResults.style.display = "none";
+    }
+})
